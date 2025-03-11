@@ -1,5 +1,5 @@
 ---
-description: Precise AI methodologies specific to this project
+description: Precise AI methodologies specific to this projec
 globs: 
 alwaysApply: true
 ---
@@ -11,14 +11,14 @@ alwaysApply: true
 
 ## Project Details
 
-- **Project Name**: Grog.Space
-- **Current Version**: 0.1.0
-- **Description**: A tabletop RPG web app where gamemasters (GMs) can manage campaigns and host play-by-post games using page commenting with built-in dice roller. GMs can create nested markdown pages, upload large maps and add location pins linked to other maps or pages. Players must be invited granting them access to character profiles, public pages and maps and comment in chat sidebars. Players can join for free. Gamemasters must subscribe.
-- **Git Repository**: https://git.oldmanumby.com/tabletop.ninja/grog.space
-- **Project Manager**: B.A. Umberger (OldManUmby)
-- **Target Audience**: Tabletop RPG Gamemasters and Players
-- **Project Timeline**: Working Beta before the end of March 2025
-- **Tech Stack**: See 'tech-stack-md' in 'docs' folder.
+- **Project Name**: [Project name here]
+- **Current Version**: [Current version number]
+- **Description**: [Brief project description]
+- **Git Repository**: [Repository URL]
+- **Project Manager**: [Your name/contact]
+- **Target Audience**: [Primary users]
+- **Project Timeline**: [Key milestones/deadlines]
+- **Tech Stack**: [Primary technologies used]
 
 ## Component Organization
 
