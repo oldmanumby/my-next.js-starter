@@ -1,3 +1,8 @@
+---
+description: Precise AI methodologies specific to this projec
+globs: 
+alwaysApply: true
+---
 # Project Rules
 
 - The 'global' document (docs/rules-global.md) covers general AI methodologies across all projects.
