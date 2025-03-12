@@ -31,6 +31,14 @@ All notable changes to this project will be documented in this file.
 - Added Lucid-React icons
 - Added Footer component and menu
 
+### Fixed
+
+- Fixed build failures during deployment
+- Resolved ESLint/Prettier formatting issues in the footer component
+- Fixed TypeScript type errors in the animated-background component
+- Excluded _references folder from TypeScript compilation
+- Added missing React import in animated-background component
+
 ## 2025-03-08 | 0.1.0
 
 ### Added

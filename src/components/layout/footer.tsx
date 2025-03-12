@@ -7,10 +7,10 @@ export function Footer() {
     { name: 'Legal', href: '/legal' },
     { name: 'Media', href: '/media' },
     { name: 'Pricing', href: '/pricing' },
-    { name: 'Support', href: '/support' }
+    { name: 'Support', href: '/support' },
   ];
   const APP_VERSION = 'v0.1.0';
-  
+
   return (
     <footer className="w-full bg-background text-foreground py-3 border-t border-border">
       <div className="max-w-7xl mx-auto px-4">
@@ -19,7 +19,7 @@ export function Footer() {
           <div className="text-sm text-muted-foreground order-2 md:order-1">
             &copy; {new Date().getFullYear()} • {APP_VERSION}
           </div>
-          
+
           {/* Footer Menu */}
           <div className="flex justify-center order-1 md:order-2">
             <AnimatedBackground
@@ -43,7 +43,7 @@ export function Footer() {
               ))}
             </AnimatedBackground>
           </div>
-          
+
           {/* Social Icons */}
           <div className="flex items-center justify-end gap-3 order-3 md:order-3">
             {/* GitHub */}

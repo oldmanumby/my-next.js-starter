@@ -17,7 +17,7 @@ const compat = new FlatCompat({
 export default [
   js.configs.recommended,
   ...compat.extends('next/core-web-vitals'),
-  
+
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
     ignores: ['node_modules/**', '.next/**', 'dist/**'],
@@ -26,21 +26,25 @@ export default [
       sourceType: 'module',
       parser: (await import('@typescript-eslint/parser')).default,
       parserOptions: {
-        ecmaFeatures: { jsx: true }
-      }
+        ecmaFeatures: { jsx: true },
+      },
     },
     plugins: {
-      '@typescript-eslint': (await import('@typescript-eslint/eslint-plugin')).default,
-      prettier: prettierPlugin
+      '@typescript-eslint': (await import('@typescript-eslint/eslint-plugin'))
+        .default,
+      prettier: prettierPlugin,
     },
     rules: {
       'prettier/prettier': 'error',
       '@typescript-eslint/no-explicit-any': 'warn',
-      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        { argsIgnorePattern: '^_' },
+      ],
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-non-null-assertion': 'warn',
-      ...prettierConfig.rules
-    }
-  }
+      ...prettierConfig.rules,
+    },
+  },
 ];

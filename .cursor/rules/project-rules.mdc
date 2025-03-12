@@ -1,5 +1,5 @@
 ---
-description: Precise AI methodologies specific to this projec
+description: Precise AI methodologies specific to this project
 globs: 
 alwaysApply: true
 ---
@@ -11,7 +11,7 @@ alwaysApply: true
 
 ## Project Details
 
-- **Project Name**: [Project name here]
+- **Project Name**: Next.js Starter Template
 - **Current Version**: [Current version number]
 - **Description**: [Brief project description]
 - **Git Repository**: [Repository URL]
