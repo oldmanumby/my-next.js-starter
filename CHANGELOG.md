@@ -27,6 +27,9 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+- Added integrated ThemeSwitcher component to Navbar with light/dark/system theme support
+- Added ThemeSwitcher component to toggle between light, dark, and system themes
+- Added Shadcn UI button component to the ui directory
 - Added sticky Navbar component with blur effect and logo
 - Increased GitHub icon size in footer by 20%
 - Added About page with rich content to demonstrate sticky navbar
@@ -41,7 +44,7 @@ All notable changes to this project will be documented in this file.
 - Fixed build failures during deployment
 - Resolved ESLint/Prettier formatting issues in the footer component
 - Fixed TypeScript type errors in the animated-background component
-- Excluded _references folder from TypeScript compilation
+- Excluded \_references folder from TypeScript compilation
 - Added missing React import in animated-background component
 
 ## 2025-03-08 | 0.1.0
