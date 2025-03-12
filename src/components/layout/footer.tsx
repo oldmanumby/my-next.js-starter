@@ -1,5 +1,8 @@
+'use client';
+
 import { AnimatedBackground } from '../motion-primitives/animated-background';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 export function Footer() {
   const MENU_ITEMS = [
@@ -10,6 +13,17 @@ export function Footer() {
     { name: 'Support', href: '/support' },
   ];
   const APP_VERSION = 'v0.1.0';
+  
+  // Copyright text configuration - customize the prefix and suffix as needed
+  const COPYRIGHT_PREFIX = '\u00A9 '; // Unicode for © symbol, more compatible across environments
+  const COPYRIGHT_SUFFIX = ' Tabletop.Ninja';
+  
+  // Use client-side rendering for the year to avoid hydration mismatch
+  const [year, setYear] = useState('');
+  
+  useEffect(() => {
+    setYear(new Date().getFullYear().toString());
+  }, []);
 
   return (
     <footer className="w-full bg-background text-foreground py-3 border-t border-border">
@@ -17,7 +31,7 @@ export function Footer() {
         <div className="flex flex-col md:grid md:grid-cols-3 items-center gap-3 md:gap-0">
           {/* Copyright + Version */}
           <div className="text-sm text-muted-foreground order-2 md:order-1">
-            &copy; {new Date().getFullYear()} • {APP_VERSION}
+            {COPYRIGHT_PREFIX}{year}{COPYRIGHT_SUFFIX} • {APP_VERSION}
           </div>
 
           {/* Footer Menu */}
