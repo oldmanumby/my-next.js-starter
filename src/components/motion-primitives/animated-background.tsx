@@ -47,7 +47,7 @@ export function AnimatedBackground({
     }
   }, [defaultValue]);
 
-  return Children.map(children, (child: any, index) => {
+  return Children.map(children, (child: ReactElement<{ 'data-id': string }>, index) => {
     const id = child.props['data-id'];
     const interactionProps = enableHover
       ? {
@@ -83,7 +83,7 @@ export function AnimatedBackground({
             />
           )}
         </AnimatePresence>
-        <div className='z-10'>{child.props.children}</div>
+        <div className="z-10">{child.props.children}</div>
       </>
     );
   });
