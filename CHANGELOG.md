@@ -21,6 +21,38 @@ All notable changes to this project will be documented in this file.
   - `### Security` - Vulnerability fixes
 - Only include sections for change types that are present in a version
 
+---
+
+## 2025-03-11 | 0.1.0
+
+### Added
+
+- Added Motion-Primitives UI 'Animated Background Tabs' component
+- Added Lucid-React icons
+- Added Footer component and menu
+
+## 2025-03-08 | 0.1.0
+
+### Added
+
+- Added 'auth' placeholder page
+
+### Changed
+
+- Enabled Tailwind CSS Dark Mode
+
+### Removed
+
+- Disabled Next.JS Dev Tools
+
+## 2025-03-07 | 0.1.0
+
+### Added
+
+- Added placeholder files for .ENV, favicon, logo and scripts
+- Added prettier and adjusted things to work with ESLint
+- Added TypeScript ESLint Plugin and adjusted config files
+
 ## 2025-03-06 | 0.1.0
 
 ### INITIAL COMMIT
@@ -75,25 +107,3 @@ All necessary dependencies for developing with Next.js, Shadcn UI, and Tailwind 
 
 - Updated Typescript setup and reference
 - Renamed tailwind.config from .js to .ts, and corrected references
-
-## 2025-03-07 | 0.1.0
-
-### Added
-
-- Added placeholder files for .ENV, favicon, logo and scripts
-- Added prettier and adjusted things to work with ESLint
-- Added TypeScript ESLint Plugin and adjusted config files
-
-## 2025-03-08 | 0.1.0
-
-### Added
-
-- Added 'auth' placeholder page
-
-### Changed
-
-- Enabled Tailwind CSS Dark Mode
-
-### Removed
-
-- Disabled Next.JS Dev Tools

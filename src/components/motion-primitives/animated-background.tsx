@@ -1,6 +1,8 @@
 'use client';
-import { cn } from '@/lib/utils';
-import { AnimatePresence, Transition, motion } from 'motion/react';
+
+import { cn } from '../../lib/utils';
+import { AnimatePresence, motion } from 'motion/react';
+import type { Transition } from 'motion';
 import {
   Children,
   cloneElement,
@@ -34,7 +36,6 @@ export function AnimatedBackground({
 
   const handleSetActiveId = (id: string | null) => {
     setActiveId(id);
-
     if (onValueChange) {
       onValueChange(id);
     }
@@ -48,7 +49,6 @@ export function AnimatedBackground({
 
   return Children.map(children, (child: any, index) => {
     const id = child.props['data-id'];
-
     const interactionProps = enableHover
       ? {
           onMouseEnter: () => handleSetActiveId(id),
