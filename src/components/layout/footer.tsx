@@ -53,8 +53,8 @@ export function Footer() {
               aria-label="GitHub"
             >
               <svg
-                width="20"
-                height="20"
+                width="24"
+                height="24"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
