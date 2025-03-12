@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { cn } from '../../lib/utils';
 import { AnimatePresence, motion } from 'motion/react';
 import type { Transition } from 'motion';
@@ -12,12 +13,24 @@ import {
   useId,
 } from 'react';
 
+// Define a more complete type for the child elements including className
+type AnimatedChildProps = {
+  'data-id': string;
+  'data-checked'?: string;
+  className?: string;
+  children?: React.ReactNode;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
+  onClick?: () => void;
+};
+
 export type AnimatedBackgroundProps = {
   children:
-    | ReactElement<{ 'data-id': string }>[]
-    | ReactElement<{ 'data-id': string }>;
+    | ReactElement<AnimatedChildProps>[]
+    | ReactElement<AnimatedChildProps>;
   defaultValue?: string;
-  onValueChange?: (newActiveId: string | null) => void;
+  // eslint-disable-next-line no-unused-vars
+  onValueChange?: (activeId: string | null) => void;
   className?: string;
   transition?: Transition;
   enableHover?: boolean;
@@ -47,44 +60,47 @@ export function AnimatedBackground({
     }
   }, [defaultValue]);
 
-  return Children.map(children, (child: ReactElement<{ 'data-id': string }>, index) => {
-    const id = child.props['data-id'];
-    const interactionProps = enableHover
-      ? {
-          onMouseEnter: () => handleSetActiveId(id),
-          onMouseLeave: () => handleSetActiveId(null),
-        }
-      : {
-          onClick: () => handleSetActiveId(id),
-        };
+  return Children.map(
+    children,
+    (child: ReactElement<AnimatedChildProps>, index) => {
+      const id = child.props['data-id'];
+      const interactionProps = enableHover
+        ? {
+            onMouseEnter: () => handleSetActiveId(id),
+            onMouseLeave: () => handleSetActiveId(null),
+          }
+        : {
+            onClick: () => handleSetActiveId(id),
+          };
 
-    return cloneElement(
-      child,
-      {
-        key: index,
-        className: cn('relative inline-flex', child.props.className),
-        'data-checked': activeId === id ? 'true' : 'false',
-        ...interactionProps,
-      },
-      <>
-        <AnimatePresence initial={false}>
-          {activeId === id && (
-            <motion.div
-              layoutId={`background-${uniqueId}`}
-              className={cn('absolute inset-0', className)}
-              transition={transition}
-              initial={{ opacity: defaultValue ? 1 : 0 }}
-              animate={{
-                opacity: 1,
-              }}
-              exit={{
-                opacity: 0,
-              }}
-            />
-          )}
-        </AnimatePresence>
-        <div className="z-10">{child.props.children}</div>
-      </>
-    );
-  });
+      return cloneElement(
+        child,
+        {
+          key: index,
+          className: cn('relative inline-flex', child.props.className),
+          'data-checked': activeId === id ? 'true' : 'false',
+          ...interactionProps,
+        },
+        <>
+          <AnimatePresence initial={false}>
+            {activeId === id && (
+              <motion.div
+                layoutId={`background-${uniqueId}`}
+                className={cn('absolute inset-0', className)}
+                transition={transition}
+                initial={{ opacity: defaultValue ? 1 : 0 }}
+                animate={{
+                  opacity: 1,
+                }}
+                exit={{
+                  opacity: 0,
+                }}
+              />
+            )}
+          </AnimatePresence>
+          <div className="z-10">{child.props.children}</div>
+        </>
+      );
+    }
+  );
 }

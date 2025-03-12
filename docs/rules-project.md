@@ -6,7 +6,7 @@
 
 ## Project Details
 
-- **Project Name**: [Project name here]
+- **Project Name**: Next.js Starter Template
 - **Current Version**: [Current version number]
 - **Description**: [Brief project description]
 - **Git Repository**: [Repository URL]
