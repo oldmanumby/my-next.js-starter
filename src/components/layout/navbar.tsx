@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import Component from '@/components/ui/theme-switcher';
 
 export function Navbar() {
   return (
@@ -19,9 +20,10 @@ export function Navbar() {
             />
           </Link>
 
-          {/* Placeholder for future menu items */}
+          {/* Placeholder for future menu items and theme switcher */}
           <div className="flex items-center space-x-4">
             {/* Menu items will be added here */}
+            <Component />
           </div>
         </div>
       </div>
