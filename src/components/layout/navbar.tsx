@@ -6,7 +6,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full">
       {/* Navbar with 90% opacity and medium blur effect */}
-      <div className="backdrop-blur-md bg-background/90 border-b border-border">
+      <div className="backdrop-blur-md bg-background/50 border-b border-border">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           {/* Logo linking to home */}
           <Link href="/" className="flex items-center">
