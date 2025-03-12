@@ -27,6 +27,8 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+- Added sticky Navbar component with blur effect and logo
+- Increased GitHub icon size in footer by 20%
 - Added Motion-Primitives UI 'Animated Background Tabs' component
 - Added Lucid-React icons
 - Added Footer component and menu
