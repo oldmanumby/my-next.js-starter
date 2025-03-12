@@ -9,13 +9,30 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import { useState, useEffect } from 'react';
 
 export default function Component() {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  // For demo purposes, we'll simulate system preference as "light"
-  const systemPreference = 'light';
-  const displayTheme = theme === 'system' ? systemPreference : theme;
+  // After hydration, we can show the UI
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // On initial mount, a blank button instead of theme icon to avoid hydration mismatch
+  if (!mounted) {
+    return (
+      <div>
+        <Button size="icon" variant="outline" aria-label="Select theme">
+          {/* No icon until client-side rendering */}
+        </Button>
+      </div>
+    );
+  }
+
+  // Only display on the client to avoid hydration mismatch
+  const displayTheme = theme === 'system' ? 'light' : theme;
 
   return (
     <div>
